@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+    <style>
+        #contentBlock{
+            /* border: 1px solid black; */
+            height: 500px;
+            width:700px;
+            margin-left: 20%;
+            border-radius: 8px ;
+            
+        }
+        .c1{
+            float: left;
+            width: 299px;
+            /* border: 1px solid red; */
+            height: 499px;
+            background-color: rgb(61, 113, 210);
+            /* border-radius: 8px; */
+        }
+        .c2{
+            float: left;
+            /* border: 1px solid green; */
+            width: 399px;
+            height: 499px;
+            background-color: aliceblue;
+        }
+        h2{
+            color: aliceblue;
+            margin-left: 10px;
+            padding: 20px;
+        }
+        .a{
+            /* border: 1px solid black; */
+            color: aliceblue;
+            width: 160px;
+            
+            margin-left: 20px;
+            padding: 7px;
+            letter-spacing: 1px;
+        }
+       .b{
+          /* border: 1px solid black; */
+          width:220px;
+          height:140px;
+          margin-left: 30px;
+          padding: 5px;
+          margin-top: 120px;
+       }
+       .c2a{
+        /* border: 1px solid black; */
+        height: 220px;
+        width: 340px;
+        padding: 10px;
+        margin-left: 5px;
+       }
+       .inp{
+        border: none;
+        outline: none;
+        border-bottom: 1px solid rgb(61, 113, 210) ;
+        margin-left: 40px;
+        background-color: aliceblue;
+        width: 300px;
+       }
+       span{
+        color: rgb(61, 113, 210);
+       }
+       button{
+        background-color: orangered;
+        border-radius: 5px;
+        text-align: center;
+        color: aliceblue;
+        height: 40px;
+        width: 300px;
+        padding: 5px;
+        margin-left: 35px;
+        margin-top: 10px;
+        border: none;
+        font-weight: bolder;
+
+       }
+       h4{
+        margin-left: 40px;
+        margin-top: 5px;
+        font-size: 12px;
+       }
+
+    </style>
+</head>
+<body>
+   <section id="contentBlock">
+     <div class="c1">
+        <h2>Login</h2>
+        <div class="a">
+         Get access to your Orders, Wishlists and Recommendation.
+        </div>
+        <div class="b">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2WwzCOPAdZsqCbKjZKEqRlqJvODgk1ySmSWHV2_94Pu8XsbZD" alt="" style="border-radius: 5px;">
+        </div>
+     </div>
+     <div class="c2">
+        <div class="c2a">
+            <p style="font-size: 12px; margin-left: 40px; margin-top: 40px; color: gray; letter-spacing: 1px;">Enter Email/Mobile number</p>
+            <input type="number" class="inp" id="inputValue" >
+            <p style="font-size: 10px; margin-left: 40px;  margin-top: 20px; color: gray;  ">By Continuing,you agree to Flipkart's  <span>Terms Of Use</span> and <span>Privacy Policy.</span></p><br>
+             <input type="checkbox" name="checkbox" style=" margin-left: 40px;"><br>
+             
+             <button onclick="requestedOtp()">Request Otp</button>
+        </div>
+
+        <h4 id="checkedOtp"></h4>
+     </div>
+   </section> 
+</body>
+<script>
+           
+           function requestedOtp(){
+            var inpVal=document.getElementById("inputValue")
+            var checkedOtp= document.getElementById("checkedOtp")
+
+            var inpValue=inpVal.value;
+           
+            
+             
+            var desLen=10;
+
+           
+
+            if(inpValue.length === desLen){
+                checkedOtp.textContent= ' "OTP has been sent successfully..." '
+                checkedOtp.style.color="green"
+                window.location.href='./otp2.html'
+
+            }
+            else if( inpValue.length > desLen){
+                
+                checkedOtp.textContent=' "Invalid mobile number" '
+                checkedOtp.style.color="red"
+
+            }
+            else if( inpValue.length < desLen){
+                
+                checkedOtp.textContent=' "Invalid mobile number" '
+                checkedOtp.style.color="red"
+
+            }
+            else if (inpValue.length === 0) {
+    checkedOtp.textContent = "Enter mobile number";
+    checkedOtp.style.color = "red";
+    // Additional code to handle empty input
+}
+           
+           }
+
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            margin-left: 30px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        span {
+            color: midnightblue;
+        }
+
+        .otp-input {
+            border: 1px solid black;
+            outline: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            margin-left: 30px;
+            
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+     
+</head>
+
+<body>
+
+    <p> Please Enter the otp sent to:<span id="contactId"></span></p>
+    <div class="otp-container">
+        <input type="text" class="otp-input"  maxlength="1">
+        <input type="text" class="otp-input" maxlength="1">
+        <input type="text" class="otp-input" maxlength="1" >
+        <input type="text" class="otp-input" maxlength="1" >
+
+       
+        <p style="color: gray; font-size: 15px;">Not received your code? <a href="./otp.html"><span
+                    style="color: cornflowerblue;">Resend Code</span></a></p>
+    </div>
+   
+</body>
+
+</html>
